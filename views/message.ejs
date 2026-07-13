@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Message Details</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
+    <main>
+      <h1>Message Details</h1>
+
+      <h2><%= message.user %></h2>
+
+      <p><%= message.text %></p>
+
+      <p>
+        <strong>Posted:</strong>
+
+        <%= message.added.toLocaleString() %>
+      </p>
+
+      <a href="/"> Back to Home </a>
+    </main>
+    <%- include("partials/footer") %>
+  </body>
+</html>

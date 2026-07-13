@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body><main>
+
+<h1><%= title %></h1>
+
+<a href="/new">Create New Message</a>
+
+<hr>
+
+<% messages.forEach((message, index) => { %>
+
+<div class="message">
+
+    <h3><%= message.user %></h3>
+
+    <p><%= message.text %></p>
+
+    <small>
+        <%= message.added.toLocaleString() %>
+    </small>
+
+    <br><br>
+
+    <a href="/message/<%= index %>">
+        Open
+    </a>
+
+</div>
+
+<hr>
+
+<% }) %></main>
+<%- include("partials/footer") %>
+</body>
+</html>
