@@ -9,18 +9,33 @@
     <main>
       <h1>Create New Message</h1>
 
+      <% if (errors.length > 0) { %>
+        <ul>
+          <% errors.forEach(error => { %>
+            <li><%= error.msg %></li>
+          <% }) %>
+        </ul>
+      <% } %>
+
       <form method="POST" action="/new">
         <label>Name</label>
 
-        <input type="text" name="messageUser" required />
+        <input
+          type="text"
+          name="messageUser"
+          value="<%= values.messageUser || '' %>"
+        />
 
-        <br /><br />
+        <br><br>
 
         <label>Message</label>
 
-        <textarea name="messageText" rows="5" required></textarea>
+        <textarea
+          name="messageText"
+          rows="5"
+        ><%= values.messageText || '' %></textarea>
 
-        <br /><br />
+        <br><br>
 
         <button type="submit">Submit</button>
       </form>
